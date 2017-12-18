@@ -1,0 +1,36 @@
+/* Write a method named printAverage that accepts a Scanner for the console as a parameter and repeatedly prompts the user for numbers. Once any number less than zero is typed, the average of all non-negative numbers typed is displayed. Display the average as a double, and do not round it. For example, a call to your method might look like this:
+
+
+Scanner console = new Scanner(System.in);
+printAverage(console);
+The following is one example log of execution for your method:
+
+Type a number: 7
+Type a number: 4
+Type a number: 16
+Type a number: -4
+Average was 9.0
+If the first number typed is negative, do not print an average. For example:
+
+Type a number: -2
+*/
+
+public static void printAverage(Scanner input){
+    boolean noNeg = true;
+    int sum = 0;
+    int totalNumbers = 0;
+    while(noNeg){
+        System.out.print("Type a number: ");
+        int newNum = input.nextInt();
+        if (newNum < 0){
+            noNeg = false;
+        }else{
+            sum += newNum;
+            totalNumbers++;
+        }
+    }
+    if(totalNumbers > 0){
+        double average = (double) sum / totalNumbers;
+        System.out.print("Average was " + average);
+    }
+}
