@@ -1,0 +1,20 @@
+/* Write a method named flipLines that accepts as its parameter a Scanner for an input file and
+that writes to the console the same file's contents with successive pairs of lines reversed in order. 
+
+A line can be blank. An input file can have an odd number of lines, in which case the last line is 
+printed in its original position. You may not make any assumptions about how many lines are in the 
+Scanner.
+*/
+
+public static void flipLines(Scanner file){
+    while(file.hasNextLine()){
+        String line1 = file.nextLine();
+        if(file.hasNextLine()){
+            String line2 = file.nextLine();
+            System.out.println(line2);
+            System.out.println(line1);
+        }else{
+            System.out.print(line1);
+        }
+    }
+}
