@@ -1,7 +1,7 @@
 # practice-it
 Solutions to problems from Practice-It! (practiceit.cs.washington.edu)
 
-All solutions problems were completed during/directly after taking CS312, or intro to programming.
+All solutions were completed during/directly after taking CS312, or intro to programming.
 
 Chapter 2 covers Primitive Data and Definite Loops,
 Chapter 3 covers Parameters and Objects,
