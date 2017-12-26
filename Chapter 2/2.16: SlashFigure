@@ -1,0 +1,34 @@
+/* Write a Java program in a class named SlashFigure that produces the following output. 
+Use nested for loops to capture the structure of the figure.
+
+!!!!!!!!!!!!!!!!!!!!!!
+\\!!!!!!!!!!!!!!!!!!//
+\\\\!!!!!!!!!!!!!!////
+\\\\\\!!!!!!!!!!//////
+\\\\\\\\!!!!!!////////
+\\\\\\\\\\!!//////////
+
+*/
+
+public class SlashFigure{
+    public static final int difference = 2;
+    public static final int rows = 6;
+    public static void main(String[] args){
+        int exclaimationPoints = 22;
+        int slashes = 0;
+        for(int i = 0; i < rows; i++){
+            for (int j = 0; j < slashes; j++){
+                System.out.print("\\");
+            }
+            for (int j = 0; j < exclaimationPoints; j++){
+                System.out.print("!");
+            }
+            for (int j = 0; j < slashes; j++){
+                System.out.print("/");
+            }
+            exclaimationPoints -= difference * 2;
+            slashes += difference;
+            System.out.println();
+        }
+    }
+}
