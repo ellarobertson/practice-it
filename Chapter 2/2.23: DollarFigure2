@@ -1,0 +1,57 @@
+/* Modify your DollarFigure program from the previous exercise to become a new program called DollarFigure2 that uses a global constant for the figure's height. (You may want to make loop tables first.) The previous output used a constant height of 7. The outputs below use a constant size of 3 (left) and 5 (right):
+
+size 3
+$$$******$$$
+**$$****$$**
+****$**$****
+
+size 5
+$$$$$**********$$$$$
+**$$$$********$$$$**
+****$$$******$$$****
+******$$****$$******
+********$**$******
+
+NOTE: This code is virtually the exact same as the code within DollarFigure;
+this code just confirms that it works with different sizes.
+*/
+
+public class DollarFigure2{
+    public static final int size = 3;
+    
+    public static void main(String[] args){
+        int dollarSigns = size;
+        int innerStars = size * 2;
+        int outerStars = 0;
+        for(int i = 0; i < size; i++){
+            starsThenSigns(outerStars, dollarSigns);
+            for(int j = 0; j < innerStars; j++){
+                System.out.print("*");
+            }
+            signsThenStars(dollarSigns, outerStars);
+            dollarSigns--;
+            innerStars-=2;
+            outerStars+=2;
+            System.out.println();
+        }   
+    }
+    
+    public static void starsThenSigns(int outerStars, int dollarSigns){
+        for(int j = 0; j < outerStars; j++){
+                System.out.print("*");
+            }
+            for(int j = 0; j < dollarSigns; j++){
+                System.out.print("$");
+            }
+    }
+    
+    public static void signsThenStars(int dollarSigns, int outerStars){
+        for(int j = 0; j < dollarSigns; j++){
+                System.out.print("$");
+            }
+            for(int j = 0; j < outerStars; j++){
+                System.out.print("*");
+            }
+    }
+        
+}
