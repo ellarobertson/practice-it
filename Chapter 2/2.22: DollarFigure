@@ -1,0 +1,51 @@
+/* Write a Java program called DollarFigure that produces the following output. Use nested for loops to capture the structure of the figure.
+
+$$$$$$$**************$$$$$$$
+**$$$$$$************$$$$$$**
+****$$$$$**********$$$$$****
+******$$$$********$$$$******
+********$$$******$$$********
+**********$$****$$**********
+************$**$************
+
+*/
+
+public class DollarFigure{
+    public static final int size = 7;
+    
+    public static void main(String[] args){
+        int dollarSigns = size;
+        int innerStars = size * 2;
+        int outerStars = 0;
+        for(int i = 0; i < size; i++){
+            starsThenSigns(outerStars, dollarSigns);
+            for(int j = 0; j < innerStars; j++){
+                System.out.print("*");
+            }
+            signsThenStars(dollarSigns, outerStars);
+            dollarSigns--;
+            innerStars-=2;
+            outerStars+=2;
+            System.out.println();
+        }   
+    }
+    
+    public static void starsThenSigns(int outerStars, int dollarSigns){
+        for(int j = 0; j < outerStars; j++){
+                System.out.print("*");
+            }
+            for(int j = 0; j < dollarSigns; j++){
+                System.out.print("$");
+            }
+    }
+    
+    public static void signsThenStars(int dollarSigns, int outerStars){
+        for(int j = 0; j < dollarSigns; j++){
+                System.out.print("$");
+            }
+            for(int j = 0; j < outerStars; j++){
+                System.out.print("*");
+            }
+    }
+        
+}
