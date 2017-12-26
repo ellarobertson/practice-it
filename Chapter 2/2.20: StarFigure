@@ -1,0 +1,32 @@
+/* Write a program in a class named StarFigure that produces the following output using for loops.
+
+////////////////\\\\\\\\\\\\\\\\
+////////////********\\\\\\\\\\\\
+////////****************\\\\\\\\
+////************************\\\\
+********************************
+
+*/
+
+public class StarFigure{
+    public static final int difference = 4;
+    
+    public static void main(String[] args){
+        int slashes = 16;
+        int stars = 0;
+        while (slashes >= 0){
+            for (int i = 0; i < slashes; i++){
+                System.out.print("/");
+            }
+            for (int i = 0; i < stars; i++){
+                System.out.print("*");
+            }
+            for(int i = 0; i < slashes; i++){
+                System.out.print("\\");
+            }
+            stars += difference * 2;
+            slashes -= difference;
+            System.out.println();
+        }
+    }  
+}
