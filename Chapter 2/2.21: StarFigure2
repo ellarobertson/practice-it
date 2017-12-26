@@ -1,0 +1,39 @@
+/* Modify your StarFigure code from the previous problem to use a constant for the size. The outputs below use a constant size of 3 (left) and 6 (right):
+
+size 3
+////////\\\\\\\\
+////********\\\\
+****************
+
+size 6
+////////////////////\\\\\\\\\\\\\\\\\\\\
+////////////////********\\\\\\\\\\\\\\\\
+////////////****************\\\\\\\\\\\\
+////////************************\\\\\\\\
+////********************************\\\\
+****************************************
+
+*/
+
+public class StarFigure2{
+    public static final int size = 3;
+    
+    public static void main(String[] args){
+        int slashes = (size - 1) * 4;
+        int stars = 0;
+        for (int i = 0; i < size; i++){
+            for (int j = 0; j < slashes; j++){
+                System.out.print("/");
+            }
+            for (int j = 0; j < stars; j++){
+                System.out.print("*");
+            }
+            for(int j = 0; j < slashes; j++){
+                System.out.print("\\");
+            }
+            stars += 8;
+            slashes -= 4;
+            System.out.println();
+        }
+    }  
+}
