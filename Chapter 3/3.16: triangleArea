@@ -1,0 +1,11 @@
+/* Write a method called triangleArea that accepts the three side lengths of a triangle 
+(all real numbers) as parameters and returns the area of a triangle with those side lengths.
+For example, the call triangleArea(8, 5.2, 7.1) should return 18.151176098258745. 
+To compute the area, use Heron's formula.
+*/
+
+public static double triangleArea(double a, double b, double c){
+    double s = (a + b + c)/ 2;
+    double base = s * (s - a) * (s - b) * (s - c);
+    return Math.pow(base, 0.5);
+}
