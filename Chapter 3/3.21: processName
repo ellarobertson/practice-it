@@ -1,0 +1,15 @@
+/* Write a method called processName that accepts a Scanner for the console as a parameter and that 
+prompts the user to enter his or her full name, then prints the name in reverse order (
+i.e., last name, first name). You may assume that only a first and last name will be given.
+Here is a sample dialogue with the user:
+
+Please enter your full name: Sammy Jankis
+Your name in reverse order is Jankis, Sammy
+*/
+
+public static void processName(Scanner name){
+    System.out.print("Please enter your full name: ");
+    String first = name.next();
+    String last = name.next();
+    System.out.print("Your name in reverse order is " + last + ", " + first);
+}
