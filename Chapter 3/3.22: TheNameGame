@@ -1,0 +1,43 @@
+/*Write a complete program called "TheNameGame", where the user inputs a first and last name and a song 
+in the following format is printed about their first, then last, name. 
+
+Example Output:
+What is your name? Fifty Cent
+Fifty Fifty, bo-Bifty
+Banana-fana fo-Fifty
+Fee-fi-mo-Mifty
+FIFTY!
+Cent Cent, bo-Bent
+Banana-fana fo-Fent
+Fee-fi-mo-Ment
+CENT! 
+*/
+
+public class TheNameGame{
+    
+    //Executes the Name Game in full
+    public static void main(String[] args){
+        Scanner keyboard = new Scanner(System.in);
+        System.out.print("What is your name? ");
+        String fullName = keyboard.nextLine();
+        processName(fullName);
+    }
+    
+    //Seperates name into first and last, creates verse for each section
+    public static void processName(String fullName){
+        Scanner stringScanner = new Scanner(fullName);
+        String first = stringScanner.next();
+        String last = stringScanner.next();
+        verse(first);
+        verse(last);
+    }
+    
+    //Prints out verse based on name input
+    public static void verse(String name){
+        String sectionOfName = name.substring(1);
+        System.out.println(name + " " + name + ", " + "bo-B" + sectionOfName);
+        System.out.println("Banana-fana fo-F" + sectionOfName);
+        System.out.println("Fee-fi-mo-M" + sectionOfName);
+        System.out.println(name.toUpperCase() + "!");
+    }
+}
