@@ -1,0 +1,26 @@
+/* Write a method called printTriangleType that accepts three integer arguments representing
+the lengths of the sides of a triangle and prints what type of triangle it is. The three types
+are equilateral, isosceles, and scalene. Here are some example calls to printTriangleType:
+
+printTriangleType(5, 7, 7);
+printTriangleType(6, 6, 6);
+printTriangleType(5, 7, 8);
+printTriangleType(12, 18, 12);
+
+The output produced should be the following:
+
+isosceles
+equilateral
+scalene
+isosceles
+*/
+
+public static void printTriangleType(int a, int b, int c){
+    String result = "isosceles";
+    if(a == b && b == c){
+        result = "equilateral";
+    }else if(a != b && b != c && c != a){
+        result = "scalene";
+    }
+    System.out.println(result);
+}
