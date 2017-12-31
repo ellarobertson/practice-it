@@ -1,0 +1,50 @@
+/* Write a method called printPalindrome that accepts a Scanner for the console as a
+parameter, and prompts the user to enter one or more words and prints whether the 
+entered String is a palindrome (i.e., reads the same forwards as it does backwards,
+like "abba" or "racecar"). If the following Scanner object were declared:
+
+
+Scanner console = new Scanner(System.in);
+printPalindrome(console);
+The resulting output for a call where the user types a palindrome would be:
+
+Type one or more words: racecar
+racecar is a palindrome!
+
+The output for a call where the user types a word that is not a palindrome would be:
+
+Type one or more words: hello
+hello is not a palindrome.
+
+For an added challenge, make the code case-insensitive, so that words like "Abba" and 
+"Madam" will be considered palindromes.
+*/
+
+public static void printPalindrome(Scanner console){
+    System.out.print("Type one or more words: ");
+    String result = console.nextLine();
+    String alteration = result.toLowerCase();
+    boolean isInputPalindrome = isPalindrome(alteration);
+    if(isInputPalindrome){
+        System.out.println(result + " is a palindrome!");
+    }else{
+        System.out.println(result + " is not a palindrome.");
+    }
+}
+
+public static boolean isPalindrome(String input){
+    if (input.length() <= 1){
+        return true;
+    }
+    int loopLength = input.length() / 2;
+    int startIndex = 0;
+    int endIndex = input.length() - 1;
+    for(int i = 0; i < loopLength; i++){
+        if(input.charAt(startIndex) != input.charAt(endIndex)){
+            return false;
+        }
+        startIndex++;
+        endIndex--;
+    }
+    return true;     
+}
