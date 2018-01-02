@@ -1,0 +1,23 @@
+/* Write a method named gcd that accepts two integers as parameters and returns
+the greatest common divisor of the two numbers. The greatest common divisor (GCD)
+of two integers a and b is the largest integer that is a factor of both a and b. 
+The GCD of any number and 1 is 1, and the GCD of any number and 0 is that number.
+
+One efficient way to compute the GCD of two numbers is to use Euclid's algorithm,
+which states the following:
+
+GCD(A, B) = GCD(B, A % B) 
+GCD(A, 0) = Absolute value of A
+
+In other words, if you repeatedly mod A by B and then swap the two values, 
+eventually B will store 0 and A will store the greatest common divisor.
+*/
+
+public static int gcd(int a, int b){
+    while (b != 0){
+        int temp = a; 
+        a = b;
+        b = temp % b;
+    }
+    return Math.abs(a);
+}
