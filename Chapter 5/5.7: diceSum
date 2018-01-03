@@ -1,0 +1,26 @@
+/* Write a method named diceSum that prompts the user for a desired sum, then repeatedly rolls
+two six-sided dice until their sum is the desired sum. Here is the expected dialogue with the
+user:
+
+Desired dice sum: 9
+4 and 3 = 7
+3 and 5 = 8
+5 and 6 = 11
+5 and 6 = 11
+1 and 5 = 6
+6 and 3 = 9
+*/
+
+public static void diceSum(){
+    Scanner input = new Scanner(System.in);
+    Random rand = new Random();
+    System.out.print("Desired dice sum: ");
+    int desiredSum = input.nextInt();
+    int a;
+    int b;
+    do{
+        a = rand.nextInt(6) + 1;
+        b = rand.nextInt(6) + 1;
+        System.out.println(a + " and " + b + " = " + (a+b));
+    }while((a+b) != desiredSum);
+}
