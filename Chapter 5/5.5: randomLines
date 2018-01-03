@@ -1,0 +1,16 @@
+/* Write a method called randomLines that prints between 5 and 10 random strings of letters 
+(between "a" and "z"), one per line. Each string should have random length of up to 80 characters.
+*/
+
+public static void randomLines(){
+    Random rand = new Random();
+    int numOfLines = rand.nextInt(5) + 6;
+    for(int i = 0; i < numOfLines; i++){
+        int numOfChars = rand.nextInt(80) + 1;
+        for(int j = 0; j < numOfChars; j++){
+            char randomChar = (char) (rand.nextInt(25) + 97);
+            System.out.print(randomChar);
+        }
+        System.out.println();
+    }
+}
