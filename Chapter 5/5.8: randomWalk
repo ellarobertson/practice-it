@@ -1,0 +1,35 @@
+/* Write a method named randomWalk that performs a random one-dimensional walk, reporting each position reached 
+and the maximum position reached during the walk. The random walk should begin at position 0. On each step, you
+should either increase or decrease the position by 1 (with equal probability). The walk stops when 3 or -3 is hit.
+The output should look like this:
+
+position = 0
+position = 1
+position = 0
+position = -1
+position = -2
+position = -1
+position = -2
+position = -3
+max position = 1
+*/
+
+public static void randomWalk(){
+    Random rand = new Random();
+    int pos = 0;
+    int maxPos = 0;
+    System.out.println("position = " + pos);
+    do{
+        int change = rand.nextInt(2)+1;
+        if(change == 1){
+            pos++;
+        }else{
+            pos--;
+        }
+        if (pos > maxPos){
+            maxPos = pos;
+        }
+        System.out.println("position = " + pos);
+    }while(pos != 3 && pos != -3);
+    System.out.println("max position = " + maxPos);
+}
