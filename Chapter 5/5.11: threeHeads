@@ -1,0 +1,32 @@
+/* Write a method named threeHeads that repeatedly flips a coin until three heads in a row are seen. 
+You should use a Random object to give an equal chance to a head or a tail appearing. Each time the coin
+is flipped, what is seen is displayed (H for heads, T for tails). When 3 heads in a row are flipped a 
+congratulatory message is printed. Here are possible outputs of two calls to threeHeads:
+
+T T T H T H H H
+Three heads in a row!
+*/
+
+public static void threeHeads(){
+    Random rand = new Random();
+    int headsInRow = 0;
+    char coin = 'H';
+    while(headsInRow != 3){
+        int hOrT = rand.nextInt(2)+1;
+        char oldCoin = coin;
+        if(hOrT == 1){
+            coin = 'H';
+        }else{
+            coin = 'T';
+        }
+        System.out.print(coin + " ");
+        if(coin == oldCoin && coin == 'H'){
+            headsInRow++;
+        }
+        else{
+            headsInRow = 0;
+        }
+    }
+    System.out.println();
+    System.out.print("Three heads in a row!");
+}
