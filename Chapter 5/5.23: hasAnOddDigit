@@ -1,0 +1,19 @@
+/* Write a method named hasAnOddDigit that returns whether any digit of an integer is odd. Your method should
+return true if the number has at least one odd digit and false if none of its digits are odd. 0, 2, 4, 6, and 
+8 are even digits, and 1, 3, 5, 7, 9 are odd digits.
+*/
+
+public static boolean hasAnOddDigit(int input){
+    final int factor = 10;
+    int number = input;
+    if (number == 0){
+        return false;
+    }
+    while(number != 0){
+        if(Math.abs((number % factor) % 2) == 1){
+            return true;
+        }
+        number /= 10;
+    }
+    return false;
+}
