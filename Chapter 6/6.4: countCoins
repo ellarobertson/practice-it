@@ -1,0 +1,33 @@
+/* Write a method named countCoins that accepts as its parameter a Scanner for an
+input file whose data represents a person's money grouped into stacks of coins. 
+Your method should add up the cash values of all the coins and print the total 
+money at the end. The input consists of a series of pairs of tokens, where each
+pair begins with an integer and is followed by the type of coin, which will be
+either "pennies" (1 cent each), "nickels" (5 cents each), "dimes" (10 cents each),
+or "quarters" (25 cents each), case-insensitively. A given coin might appear more 
+than once on the same line.
+
+You may assume that the file contains at least 1 pair of tokens. 
+You may also assume that the input is valid; that the input has an even number of
+tokens, that every other token is an integer, and that the others are valid coin 
+types.
+*/
+
+public static void countCoins(Scanner input){
+    double total = 0.0;
+    while(input.hasNext()){
+        int numOfCoin = input.nextInt();
+        String coinType = input.next().toLowerCase();
+        if(coinType.equals("quarters")){
+            total += 0.25 * numOfCoin;
+        }else if(coinType.equals("dimes")){
+            total += 0.1 * numOfCoin;
+        }else if(coinType.equals("nickels")){
+            total += 0.05 * numOfCoin;
+        }else if(coinType.equals("pennies")){
+            total += 0.01 * numOfCoin;
+        }
+    }
+    
+    System.out.printf("Total money: $%.2f", total);
+}
