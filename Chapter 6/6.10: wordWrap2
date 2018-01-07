@@ -1,0 +1,21 @@
+/* Modify the preceding wordWrap method into a new wordWrap2 method that 
+accepts a second parameter for a PrintStream to write the data, and outputs 
+the newly wrapped text to that PrintStream rather than to the console.
+*/
+
+public static void wordWrap2(Scanner input, PrintStream output){
+    final int charsForLine = 60;
+    while(input.hasNextLine()){
+        String line = input.nextLine();
+        int startPoint = 0;
+        int endPoint = charsForLine;
+        int lineLength = line.length();
+        while(lineLength > charsForLine){
+            output.println(line.substring(startPoint, endPoint));
+            startPoint += charsForLine;
+            endPoint += charsForLine;
+            lineLength -= charsForLine;
+        }
+        output.println(line.substring(startPoint, line.length()));
+    }
+}
