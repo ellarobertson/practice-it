@@ -1,0 +1,12 @@
+/* Write a method called median that accepts an array of integers as its argument and returns
+the median of the numbers in the array. The median is the number that will appear in the middle
+if you arrange the elements in order. Assume that the array is of odd size 
+(so that one sole element constitutes the median) and that the numbers in the array are 
+between 0 and 99 inclusive.
+*/
+
+public static int median(int[] input){
+    Arrays.sort(input);
+    int middle = input.length / 2;
+    return input[middle];
+}
