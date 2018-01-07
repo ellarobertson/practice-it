@@ -1,0 +1,24 @@
+/* Modify the preceding wordWrap method into a new wordWrap3 method that wraps only whole
+words, never chopping a word in half. Assume that a word is any whitespace-separated token 
+and that all words are under 60 characters in length. Make sure that each time you wrap a 
+line, the subsequent wrapped line(s) each begin with a word and not with any leading 
+whitespace. 
+*/
+
+public static void wordWrap3(Scanner input){
+    final int charsForLine = 60;
+    while(input.hasNextLine()){
+        String line = input.nextLine();
+        while(line.length() > charsForLine){
+            if(line.charAt(charsForLine) == ' '){
+                System.out.println(line.substring(0, charsForLine));
+                line = line.substring(charsForLine + 1);                         
+            }else{
+                int newIndex = line.substring(0, charsForLine).lastIndexOf(" ");
+                System.out.println(line.substring(0, newIndex));
+                line = line.substring(newIndex + 1);                                   
+            }
+        }
+        System.out.println(line);
+    }
+}
