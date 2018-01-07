@@ -1,0 +1,17 @@
+/* Write a method called stdev that returns the standard deviation of an array of integers. 
+Standard deviation is computed by taking the square root of the sum of the squares of the
+differences between each element and the mean, divided by one less than the number of elements.
+*/
+
+public static double stdev(int[] input){
+    int sum = 0;
+    for(int i = 0; i < input.length; i++){
+        sum += input[i];
+    }
+    double mean = (sum / input.length);
+    double numerator = 0;
+    for(int i = 0; i < input.length; i++){
+        numerator += Math.pow(input[i] - mean, 2);
+    }
+    return Math.sqrt((numerator / (input.length - 1)));
+}
