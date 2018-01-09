@@ -1,0 +1,54 @@
+/* Write a method called isMagicSquare that accepts a two-dimensional array of integers as a parameter and 
+returns true if it is a magic square. A square matrix is a magic square if it is square in shape (same number
+of rows as columns, and every row the same length), and all of its row, column, and diagonal sums are equal.
+*/
+
+public static boolean isMagicSquare(int[][] a){
+    if(a.length == 0){
+        return true;
+    }
+    int length = a[0].length;
+    int sum = 0;
+    
+    //gets initial sum
+    for(int i = 0; i < a.length; i++){
+        sum += a[i][0];
+    }
+    
+    //checks sum of rows
+    for(int i = 0; i < a.length; i++){
+        if(a[i].length != length){
+            return false;
+        }
+        int rowSum = 0;
+        for (int j = 0; j < a[0].length; j++){
+            rowSum += a[i][j];
+        }
+        if (rowSum != sum){
+            return false;
+        }
+    }
+    
+    //checks sum of columns
+    for(int j = 0; j < a.length; j++){
+        int columnSum = 0;
+        for(int i = 0; i < a.length; i++){
+            columnSum += a[i][j];
+        }
+        if(columnSum != sum){
+            return false;
+        }
+    }
+    
+    //checks sums of diagonals
+    int diagSum = 0;
+    int diagSum2 = 0;
+    for(int  i = 0; i < a.length; i++){
+        diagSum += a[i][i];
+        diagSum2 += a[a.length - i - 1][i];
+    }
+    if(diagSum != sum || diagSum2 != sum){
+        return false;
+    }
+    return true;
+}
