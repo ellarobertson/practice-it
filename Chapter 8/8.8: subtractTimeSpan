@@ -1,0 +1,28 @@
+/* Add the following method to the TimeSpan class:
+
+public void subtract(TimeSpan span)
+Subtracts the given amount of time from this time span. (You do not need to worry about the case of a negative result.)
+
+Recall the TimeSpan code from this chapter:
+
+
+public class TimeSpan {
+    private int hours;
+    private int minutes;
+    
+    public void add(int hours, int minutes) { ... }
+    public int getHours() { ... }
+    public int getMinutes() { ... }
+    public String toString() { ... }    
+}
+*/
+
+//my code
+public void subtract(TimeSpan span){
+    hours -= span.hours;
+    minutes -= span.minutes;
+    if (minutes < 0){
+        hours--;
+        minutes = 60 + minutes;
+    }
+}
