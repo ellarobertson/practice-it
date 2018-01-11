@@ -1,0 +1,17 @@
+/* Add the following method to the BankAccount class:
+
+public String toString()
+
+Your method should return a string that contains the account's name and balance separated by a comma 
+and space. There are some special cases you should handle. If the balance is negative, put the - sign before 
+the dollar sign. Also, always display the cents as a two-digit number.
+*/
+
+public String toString() {
+    String result = this.name + ", ";
+    if (this.balance < 0){
+        result += "-";
+    }
+    result += String.format("$%.2f", Math.abs(this.balance));
+    return result;
+}
