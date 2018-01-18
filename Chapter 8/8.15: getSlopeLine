@@ -1,0 +1,13 @@
+/* Add the following method to your Line class from the previous exercise:
+
+public double getSlope()
+Returns the slope of this line. 
+*/
+
+public double getSlope(){
+    if(p1.getX() == p2.getX()){
+        throw new IllegalStateException();
+    }else{
+        return ((double) p2.getY() - p1.getY())/((double) p2.getX() - p1.getX());
+    }
+}
